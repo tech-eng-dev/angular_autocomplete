@@ -1,0 +1,11 @@
+<div class="homepage">
+  <mat-form-field class="full-width">
+    <input matInput placeholder="Search for projects and people" [matAutocomplete]="auto" [formControl]="stateCtrl">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let item of filteredStates | async" [value]="item.link_code" class="aaa">
+        <span [innerHTML]="item.image_code"></span>
+        <span>{{item.link_code}}</span>
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</div>
